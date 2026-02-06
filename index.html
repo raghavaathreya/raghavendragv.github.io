@@ -8,8 +8,8 @@
     <style>
         :root {
             --primary: #0A1828;
-            --secondary: #1E3A8A;
-            --accent: #DC2626;
+            --secondary: #178582;
+            --accent: #BFA181;
             --text: #2C3E50;
             --bg: #F8F9FA;
             --card-bg: #FFFFFF;
@@ -68,13 +68,6 @@
             display: flex;
             list-style: none;
             gap: 2.5rem;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-        }
-
-        nav ul::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
         }
 
         nav a {
@@ -123,8 +116,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(23, 133, 130, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(191, 161, 129, 0.1) 0%, transparent 50%);
         }
 
         .hero .container {
@@ -185,9 +178,9 @@
         }
 
         .btn-primary:hover {
-            background: #2563EB;
+            background: #1a9d99;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+            box-shadow: 0 10px 30px rgba(23, 133, 130, 0.3);
         }
 
         .btn-secondary {
@@ -534,7 +527,7 @@
             background: var(--secondary);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+            box-shadow: 0 10px 30px rgba(23, 133, 130, 0.3);
         }
 
         /* Footer */
@@ -571,18 +564,8 @@
                 font-size: 1.4rem;
             }
 
-            nav .container {
-                padding: 0 1rem;
-            }
-
             nav ul {
-                gap: 1.5rem;
-                padding-right: 1rem;
-            }
-
-            nav a {
-                white-space: nowrap;
-                font-size: 0.9rem;
+                gap: 1rem;
             }
 
             .about-content {
@@ -914,9 +897,9 @@
                 </p>
                 
                 <div class="contact-links">
-                    <a href="/cdn-cgi/l/email-protection#ef9d8e88878e998e9b879d8a968eaf88828e8683c18c8082" class="contact-link">
+                    <a href="mailto:raghavathreya@gmail.com" class="contact-link">
                         <span>📧</span>
-                        <span><span class="__cf_email__" data-cfemail="6a180b0d020b1c0b1e02180f130b2a0d070b030644090507">[email&#160;protected]</span></span>
+                        <span>raghavathreya@gmail.com</span>
                     </a>
                     <a href="https://linkedin.com/in/raghavendra-gv/" target="_blank" class="contact-link">
                         <span>💼</span>
@@ -938,7 +921,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Smooth scroll with offset for fixed nav
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -965,3 +948,13 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-category, .project-card, .experience-item, .education-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
