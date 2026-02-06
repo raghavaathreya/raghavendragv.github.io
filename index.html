@@ -68,6 +68,13 @@
             display: flex;
             list-style: none;
             gap: 2.5rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        nav ul::-webkit-scrollbar {
+            display: none;
         }
 
         nav a {
@@ -76,6 +83,7 @@
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
+            white-space: nowrap;
         }
 
         nav a::after {
@@ -158,6 +166,7 @@
             display: flex;
             gap: 1.5rem;
             animation: fadeInUp 1s ease-out 0.6s both;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -564,8 +573,17 @@
                 font-size: 1.4rem;
             }
 
+            nav .container {
+                padding: 0 1rem;
+            }
+
             nav ul {
-                gap: 1rem;
+                gap: 1.5rem;
+                padding-right: 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
             }
 
             .about-content {
@@ -897,7 +915,7 @@
                 </p>
                 
                 <div class="contact-links">
-                    <a href="mailto:raghavaathreya@gmail.com" class="contact-link">
+                    <a href="mailto:raghavathreya@gmail.com" class="contact-link">
                         <span>📧</span>
                         <span>raghavathreya@gmail.com</span>
                     </a>
