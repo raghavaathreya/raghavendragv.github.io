@@ -8,7 +8,8 @@
     <style>
         :root {
             --primary: #0A1828;
-            --secondary: #178582;
+            --secondary: #1565C0;
+            --secondary-hover: #1976D2;
             --accent: #BFA181;
             --text: #2C3E50;
             --bg: #F8F9FA;
@@ -16,11 +17,7 @@
             --shadow: rgba(0, 0, 0, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Work Sans', sans-serif;
@@ -30,10 +27,7 @@
             overflow-x: hidden;
         }
 
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         /* Navigation */
         nav {
@@ -44,7 +38,7 @@
             backdrop-filter: blur(10px);
             padding: 1.5rem 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
         nav .container {
@@ -73,9 +67,7 @@
             scrollbar-width: none;
         }
 
-        nav ul::-webkit-scrollbar {
-            display: none;
-        }
+        nav ul::-webkit-scrollbar { display: none; }
 
         nav a {
             color: white;
@@ -97,15 +89,10 @@
             transition: width 0.3s;
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--accent); }
 
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -119,12 +106,9 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(23, 133, 130, 0.1) 0%, transparent 50%),
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(21, 101, 192, 0.12) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(191, 161, 129, 0.1) 0%, transparent 50%);
         }
 
@@ -156,7 +140,7 @@
 
         .hero .description {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255,255,255,0.8);
             max-width: 600px;
             margin-bottom: 2.5rem;
             animation: fadeInUp 1s ease-out 0.4s both;
@@ -181,32 +165,21 @@
             transition: all 0.3s;
         }
 
-        .btn-primary {
-            background: var(--secondary);
-            color: white;
-        }
-
+        .btn-primary { background: var(--secondary); color: white; }
         .btn-primary:hover {
-            background: #1a9d99;
+            background: var(--secondary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(23, 133, 130, 0.3);
+            box-shadow: 0 10px 30px rgba(21, 101, 192, 0.35);
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid var(--accent);
-        }
-
+        .btn-secondary { background: transparent; color: white; border: 2px solid var(--accent); }
         .btn-secondary:hover {
             background: var(--accent);
             transform: translateY(-2px);
         }
 
-        /* Section Styling */
-        section {
-            padding: 6rem 0;
-        }
+        /* Sections */
+        section { padding: 6rem 0; }
 
         .container {
             max-width: 1200px;
@@ -240,7 +213,7 @@
             margin-bottom: 3rem;
         }
 
-        /* About Section */
+        /* About */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -248,18 +221,10 @@
             align-items: center;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
+        .about-text p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; }
+        .about-text .highlight { color: var(--secondary); font-weight: 600; }
 
-        .about-text .highlight {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-
-        /* Skills Section */
+        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -277,7 +242,7 @@
 
         .skill-category:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         .skill-category h3 {
@@ -287,9 +252,7 @@
             margin-bottom: 1rem;
         }
 
-        .skill-category ul {
-            list-style: none;
-        }
+        .skill-category ul { list-style: none; }
 
         .skill-category li {
             padding: 0.5rem 0;
@@ -306,10 +269,8 @@
             font-weight: bold;
         }
 
-        /* Projects Section */
-        #projects {
-            background: white;
-        }
+        /* Projects */
+        #projects { background: white; }
 
         .projects-grid {
             display: grid;
@@ -323,18 +284,14 @@
             overflow: hidden;
             box-shadow: 0 5px 20px var(--shadow);
             transition: transform 0.3s;
-            display: grid;
-            grid-template-columns: 1fr;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
-        .project-content {
-            padding: 2.5rem;
-        }
+        .project-content { padding: 2.5rem; }
 
         .project-card h3 {
             font-family: 'Playfair Display', serif;
@@ -359,16 +316,9 @@
             font-weight: 500;
         }
 
-        .project-card p {
-            color: var(--text);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
+        .project-card p { color: var(--text); line-height: 1.8; margin-bottom: 1rem; }
 
-        .project-highlights {
-            list-style: none;
-            margin-top: 1rem;
-        }
+        .project-highlights { list-style: none; margin-top: 1rem; }
 
         .project-highlights li {
             padding: 0.5rem 0;
@@ -384,7 +334,85 @@
             font-weight: bold;
         }
 
-        /* Experience Section */
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .project-link:hover {
+            background: var(--secondary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21,101,192,0.3);
+        }
+
+        /* Show More Button */
+        .show-more-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .btn-show-more {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-show-more:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(21,101,192,0.25);
+        }
+
+        .btn-show-more .arrow {
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .btn-show-more.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* More Projects */
+        .more-projects-grid {
+            display: none;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .more-projects-grid.visible {
+            display: grid;
+        }
+
+        /* Experience */
         .experience-timeline {
             margin-top: 3rem;
             position: relative;
@@ -394,9 +422,7 @@
         .experience-timeline::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
+            left: 0; top: 0; bottom: 0;
             width: 3px;
             background: var(--accent);
         }
@@ -443,9 +469,7 @@
             margin-bottom: 1rem;
         }
 
-        .experience-item ul {
-            list-style: none;
-        }
+        .experience-item ul { list-style: none; }
 
         .experience-item li {
             padding: 0.5rem 0;
@@ -461,10 +485,8 @@
             font-weight: bold;
         }
 
-        /* Education Section */
-        #education {
-            background: white;
-        }
+        /* Education */
+        #education { background: white; }
 
         .education-grid {
             display: grid;
@@ -488,28 +510,17 @@
             margin-bottom: 0.5rem;
         }
 
-        .education-card .institution {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
+        .education-card .institution { color: var(--secondary); font-weight: 600; margin-bottom: 0.5rem; }
+        .education-card .duration { color: var(--accent); font-weight: 500; }
 
-        .education-card .duration {
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        /* Contact Section */
+        /* Contact */
         .contact-content {
             text-align: center;
             max-width: 800px;
             margin: 3rem auto;
         }
 
-        .contact-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
+        .contact-content p { font-size: 1.2rem; margin-bottom: 2rem; }
 
         .contact-links {
             display: flex;
@@ -536,10 +547,9 @@
             background: var(--secondary);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(23, 133, 130, 0.3);
+            box-shadow: 0 10px 30px rgba(21, 101, 192, 0.3);
         }
 
-        /* Footer */
         footer {
             background: var(--primary);
             color: white;
@@ -547,65 +557,28 @@
             padding: 2rem 0;
         }
 
-        footer p {
-            margin: 0;
-        }
+        footer p { margin: 0; }
 
-        /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.4rem;
-            }
-
-            nav .container {
-                padding: 0 1rem;
-            }
-
-            nav ul {
-                gap: 1.5rem;
-                padding-right: 1rem;
-            }
-
-            nav a {
-                font-size: 0.9rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .experience-timeline {
-                padding-left: 2rem;
-            }
+            .hero h1 { font-size: 3rem; }
+            .hero .subtitle { font-size: 1.4rem; }
+            nav .container { padding: 0 1rem; }
+            nav ul { gap: 1.5rem; padding-right: 1rem; }
+            nav a { font-size: 0.9rem; }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .section-title { font-size: 2rem; }
+            .cta-buttons { flex-direction: column; }
+            .experience-timeline { padding-left: 2rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -620,13 +593,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="container">
             <h1>Raghavendra G V</h1>
-            <p class="subtitle">Software Engineer</p>
+            <p class="subtitle">Backend Software Engineer</p>
             <p class="description">
-                Building scalable automation systems and REST APIs. 
+                Building scalable microservices, REST APIs, and AI-powered backends.
                 Passionate about clean code, system design, and solving complex technical challenges.
             </p>
             <div class="cta-buttons">
@@ -636,31 +609,30 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Software Engineer | Problem Solver | Continuous Learner</p>
-            
+            <p class="section-subtitle">Backend Engineer | Problem Solver | Continuous Learner</p>
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a <span class="highlight">Software Engineer</span> with 1.5+ years of experience 
-                        building production-grade automation systems, REST APIs, and scalable backend solutions.
+                        I'm a <span class="highlight">Backend Software Engineer</span> with experience
+                        building production-grade microservices, REST APIs, and distributed systems using
+                        Java, Spring Boot, and Node.js.
                     </p>
                     <p>
-                        At Kyndryl, I developed automation workflows processing <span class="highlight">500+ weekly tickets</span>, 
-                        created REST API integration layers connecting enterprise platforms, and built internal tools that 
-                        saved approximately <span class="highlight">120 person-hours monthly</span>.
+                        At Kyndryl, I developed Java microservices processing real-time events, built
+                        REST APIs used by <span class="highlight">200+ people internally</span>, and managed
+                        deployments using GitHub Actions and Docker across dev and production environments.
                     </p>
                     <p>
-                        I work primarily with <span class="highlight">Java, Python, and Spring Boot</span>, and I'm experienced 
-                        with cloud technologies like AWS, Docker, and CI/CD pipelines. I'm passionate about writing clean, 
-                        maintainable code and continuously improving my skills.
+                        I'm now integrating <span class="highlight">AI into backends</span> — working with
+                        LangChain, RAG pipelines, and OpenAI/Gemini APIs to build intelligent, context-aware systems.
                     </p>
                     <p>
-                        Currently pursuing an <span class="highlight">MSc in Computer Science</span> (AI & ML specialization) 
-                        and enrolled in Scaler's intensive backend engineering program to deepen my expertise in 
+                        Currently pursuing an <span class="highlight">MSc in Computer Science</span> (AI & ML)
+                        and enrolled in Scaler's intensive backend engineering program to deepen my expertise in
                         system design and algorithms.
                     </p>
                 </div>
@@ -668,10 +640,10 @@
                     <div class="skill-category">
                         <h3>Quick Facts</h3>
                         <ul>
-                            <li>1.5+ years of professional experience</li>
+                            <li>2+ years of professional experience</li>
                             <li>Based in Bangalore, India</li>
-                            <li>Open to remote opportunities</li>
-                            <li>Passionate about backend development</li>
+                            <li>Open to SDE-1 backend roles</li>
+                            <li>Passionate about backend & AI integration</li>
                             <li>Active learner & problem solver</li>
                         </ul>
                     </div>
@@ -680,12 +652,11 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills -->
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
             <p class="section-subtitle">Technologies I work with</p>
-            
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Languages</h3>
@@ -696,7 +667,6 @@
                         <li>SQL</li>
                     </ul>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Backend Frameworks</h3>
                     <ul>
@@ -706,17 +676,14 @@
                         <li>Microservices</li>
                     </ul>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Databases</h3>
                     <ul>
                         <li>PostgreSQL</li>
                         <li>MongoDB</li>
                         <li>Redis</li>
-                        <li>H2</li>
                     </ul>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Cloud & DevOps</h3>
                     <ul>
@@ -726,37 +693,69 @@
                         <li>CI/CD</li>
                     </ul>
                 </div>
-                
                 <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
+                    <h3>AI / ML</h3>
                     <ul>
-                        <li>Git</li>
-                        <li>Linux</li>
-                        <li>JUnit/Mockito</li>
-                        <li>ServiceNow</li>
+                        <li>LangChain</li>
+                        <li>Pinecone</li>
+                        <li>OpenAI API</li>
+                        <li>Scikit-learn</li>
+                        <li>Pandas / NumPy</li>
                     </ul>
                 </div>
-                
                 <div class="skill-category">
-                    <h3>Core Competencies</h3>
+                    <h3>Tools</h3>
                     <ul>
-                        <li>Data Structures & Algorithms</li>
-                        <li>System Design</li>
-                        <li>Agile/Scrum</li>
+                        <li>Git / Linux</li>
+                        <li>JUnit / Mockito</li>
+                        <li>RabbitMQ</li>
+                        <li>WebSocket</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <p class="section-subtitle">Things I've built</p>
-            
+
+            <!-- Main 3 Projects -->
             <div class="projects-grid">
-                <!-- Project 1 -->
+
+                <!-- Notification Service -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Notification Service</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java 17</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">RabbitMQ</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Pinecone</span>
+                            <span class="tech-tag">Gemini API</span>
+                        </div>
+                        <p>
+                            Production-grade event-driven microservice for multi-channel notifications (email, SMS, push),
+                            with an AI-powered RAG pipeline for personalised content generation.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Built an event-driven microservice; each channel (email, SMS, push) runs its own independent RabbitMQ consumer</li>
+                            <li>Integrated a RAG pipeline using LangChain and Pinecone — retrieves user context from vector store and passes it to Gemini API for dynamic generation</li>
+                            <li>JWT-secured REST APIs with Redis caching; 51 unit tests passing</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://raw-notification-service.netlify.app/" target="_blank" class="project-link">🔗 Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algorithmic Trading Backtesting Engine -->
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Algorithmic Trading Backtesting Engine</h3>
@@ -764,22 +763,22 @@
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Pandas</span>
                             <span class="tech-tag">NumPy</span>
-                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">GitHub</span>
                         </div>
                         <p>
-                            A comprehensive backtesting engine for simulating trading strategies across historical market data 
-                            with advanced performance analytics.
+                            A comprehensive backtesting engine that simulates trading strategies across historical
+                            market data with ML-powered signal prediction and performance analytics.
                         </p>
                         <ul class="project-highlights">
-                            <li>Built rule-based engine simulating strategies across 10,000+ historical OHLCV datasets</li>
-                            <li>Implemented entry/exit logic, stop-loss mechanisms, and take-profit targets</li>
-                            <li>Developed performance analytics calculating P&L, drawdown, Sharpe ratio, and win rate</li>
-                            <li>Achieved 25% improvement in risk-adjusted returns through optimized data structures</li>
+                            <li>Runs trading strategies on 10,000+ historical datasets with configurable entry/exit logic, stop-loss, and risk parameters</li>
+                            <li>Integrated Scikit-learn ML model to predict buy/sell signals — improved strategy accuracy by 18% over rule-based logic alone</li>
+                            <li>Performance analytics: P&L, drawdown, Sharpe ratio, win rate</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Multi-Tenant SaaS -->
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Multi-Tenant SaaS Application</h3>
@@ -788,144 +787,202 @@
                             <span class="tech-tag">Express</span>
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
                             <span class="tech-tag">Docker</span>
                             <span class="tech-tag">AWS</span>
                         </div>
                         <p>
-                            A scalable multi-tenant SaaS platform with microservices architecture, JWT authentication, 
-                            and role-based access control.
+                            Scalable multi-tenant backend from scratch with JWT authentication, RBAC,
+                            tenant isolation, and automated CI/CD deployments on AWS.
                         </p>
                         <ul class="project-highlights">
-                            <li>Designed microservices architecture with JWT-based authentication and RBAC</li>
-                            <li>Optimized database design achieving 60% performance improvement</li>
-                            <li>Implemented Redis caching layer for frequently accessed data</li>
-                            <li>Built CI/CD pipeline reducing deployment time from 2+ hours to under 5 minutes</li>
+                            <li>JWT authentication, RBAC, and tenant isolation — no boilerplate</li>
+                            <li>Cut query latency by 60% with Redis caching and smart indexing</li>
+                            <li>CI/CD pipeline with GitHub Actions and Docker for automated deployments to AWS</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+            </div>
+
+            <!-- Show More Button -->
+            <div class="show-more-wrapper">
+                <button class="btn-show-more" id="showMoreBtn" onclick="toggleMoreProjects()">
+                    Show More Projects <span class="arrow">▼</span>
+                </button>
+            </div>
+
+            <!-- More Projects (hidden initially) -->
+            <div class="more-projects-grid" id="moreProjects">
+
+                <!-- Vedic Astro -->
                 <div class="project-card">
                     <div class="project-content">
-                        <h3>Task Management REST API</h3>
+                        <h3>Vedic Astro</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Groq AI</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <p>
+                            Full-stack Vedic astrology platform with AI-powered personalised insights,
+                            deployed across three tiers on cloud infrastructure with $0/month hosting cost.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>3-tier architecture: React Native frontend, Spring Boot backend (Railway), Python/Flask microservice (Render)</li>
+                            <li>RESTful microservices integrating Swiss Ephemeris for astronomical calculations and Groq AI (LLaMA 3.3 70B) for horoscope generation</li>
+                            <li>Cross-platform mobile UI with 6-tab navigation, dual chart styles, and responsive design</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://vedic-astro-app.netlify.app/splash" target="_blank" class="project-link">🔗 Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ExecEngine -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>ExecEngine — Study Tracker PWA</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Zustand</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <p>
+                            Production-grade study execution system PWA with deadline-driven scheduling,
+                            IST timezone normalisation, and a strict execution engine.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Deadline-driven scheduling engine with IST timezone normalisation, dynamic backlog computation, and skip-day logic</li>
+                            <li>PWA installable on iOS and Android with custom study analytics dashboard and streak tracking</li>
+                            <li>Row-level security policies on Supabase for data isolation</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://raw-execution-system.vercel.app/" target="_blank" class="project-link">🔗 Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hand Cricket Game -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Hand Cricket Game</h3>
                         <div class="project-tech">
                             <span class="tech-tag">Java 17</span>
                             <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">JUnit</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Vanilla JS</span>
                             <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Netlify</span>
                         </div>
                         <p>
-                            A RESTful API for task management with comprehensive CRUD operations, 
-                            Spring Data JPA persistence, and containerized deployment.
+                            Real-time 2-player hand cricket game with a custom text-based message protocol
+                            and full server-side state management.
                         </p>
                         <ul class="project-highlights">
-                            <li>Developed RESTful API with full CRUD operations using Spring Data JPA</li>
-                            <li>Achieved 85% code coverage through comprehensive unit and integration testing</li>
-                            <li>Containerized application using Docker with multi-stage builds</li>
-                            <li>Reduced image size by 40% for efficient deployment</li>
+                            <li>Spring Boot WebSocket (TextWebSocketHandler) with a custom text-based message protocol managing concurrent game rooms with full server-side state isolation</li>
+                            <li>Game state machine handling toss, innings, scoring, out detection, tie logic, rematch voting, and player disconnect</li>
+                            <li>All state lives on the server — clients only send move numbers</li>
                         </ul>
+                        <div class="project-links">
+                            <a href="https://raw-cricket.netlify.app/" target="_blank" class="project-link">🔗 Live Demo</a>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience">
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
             <p class="section-subtitle">My professional journey</p>
-            
             <div class="experience-timeline">
-                <!-- Kyndryl -->
+
                 <div class="experience-item">
                     <h3>Associate Technical Engineer</h3>
                     <p class="company">Kyndryl (formerly IBM Global Technology Services)</p>
-                    <p class="duration">Jul 2023 - Jan 2025 | Bangalore, India</p>
-                    <p style="margin-bottom: 1rem; color: var(--secondary); font-weight: 600;">
-                        Backend Development & Automation
-                    </p>
+                    <p class="duration">Aug 2023 – Jan 2025 | Bangalore, India</p>
+                    <p style="margin-bottom: 1rem; color: var(--secondary); font-weight: 600;">Backend Development</p>
                     <ul>
-                        <li>Built backend automation workflows processing 500+ weekly incident tickets with intelligent triage algorithms</li>
-                        <li>Developed REST API integration layer connecting ServiceNow, Splunk, and monitoring tools</li>
-                        <li>Created 3 internal automation tools using PowerApps and Python, saving 120 person-hours monthly</li>
-                        <li>Designed data-processing pipelines improving alert accuracy through pattern recognition</li>
-                        <li>Deployed automation solutions to production serving 200+ users with Git-based workflows</li>
+                        <li>Worked on Java-based microservices that processed real-time events, wrote business logic, handled exceptions, and managed inter-service communication</li>
+                        <li>Built REST APIs using Spring Boot for authentication, request validation, and data transformation — used by 200+ people internally</li>
+                        <li>Managed deployments and release pipelines using GitHub Actions and Docker across dev and production environments</li>
                     </ul>
                 </div>
 
-                <!-- Hextra Digital -->
                 <div class="experience-item">
-                    <h3>Front-End Developer (Intern)</h3>
+                    <h3>Front-End Developer Intern</h3>
                     <p class="company">Hextra Digital Pvt Ltd</p>
-                    <p class="duration">Jul 2022 - Jul 2023 | Bangalore, India</p>
+                    <p class="duration">Jul 2022 – Feb 2023 | Bangalore, India</p>
                     <ul>
-                        <li>Built and deployed 10+ responsive web pages using HTML5, CSS3, JavaScript, and Bootstrap</li>
-                        <li>Created reusable component library reducing development time by 25%</li>
-                        <li>Participated in Agile development using Git/GitHub for version control</li>
-                        <li>Debugged cross-browser compatibility issues ensuring consistent user experience</li>
+                        <li>Wrote JavaScript logic for dynamic UI interactions and API integrations; managed releases through Git</li>
+                        <li>Worked directly with clients on 10+ projects, built reusable components that cut development time by 25%</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education -->
     <section id="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
             <p class="section-subtitle">Academic background & continuous learning</p>
-            
             <div class="education-grid">
                 <div class="education-card">
-                    <h3>Master of Science - Computer Science (Part-Time)</h3>
-                    <p class="institution">Woolf University</p>
-                    <p class="duration">2025 - Present</p>
+                    <h3>MSc Computer Science — GenAI & ML</h3>
+                    <p class="institution">Woolf University | Online</p>
+                    <p class="duration">2025 – Present</p>
                     <p style="margin-top: 1rem;">Specialization: Generative AI & Machine Learning</p>
                 </div>
-
                 <div class="education-card">
                     <h3>Software Development Program</h3>
-                    <p class="institution">Scaler Academy</p>
-                    <p class="duration">2025 - Present</p>
-                    <p style="margin-top: 1rem;">Intensive Backend Engineering Training (30+ hours/week) in advanced system design, DSA & Algorithms</p>
+                    <p class="institution">Scaler Academy | Bangalore</p>
+                    <p class="duration">2025 – 2026</p>
+                    <p style="margin-top: 1rem;">Intensive backend engineering — advanced system design, DSA & algorithms</p>
                 </div>
-
                 <div class="education-card">
                     <h3>Bachelor of Computer Applications</h3>
-                    <p class="institution">Jain University, Bangalore</p>
-                    <p class="duration">2020 - 2023</p>
-                    <p style="margin-top: 1rem;">Specialization: Cloud Technology & Information Security | CGPA: 8.3/10</p>
+                    <p class="institution">Jain University | Bangalore</p>
+                    <p class="duration">2020 – 2023</p>
+                    <p style="margin-top: 1rem;">Cloud Technology & Information Security | CGPA: 8.3/10</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">Let's connect and build something amazing together</p>
-            
             <div class="contact-content">
                 <p>
-                    I'm currently looking for SDE 1 / Software Engineer opportunities where I can contribute 
+                    I'm currently looking for SDE-1 / Backend Engineer opportunities where I can contribute
                     to building scalable systems and grow as an engineer. Feel free to reach out!
                 </p>
-                
                 <div class="contact-links">
-                    <a href="mailto:raghavathreya@gmail.com" class="contact-link">
-                        <span>📧</span>
-                        <span>raghavathreya@gmail.com</span>
+                    <a href="mailto:raghavaathreya@gmail.com" class="contact-link">
+                        <span>📧</span><span>raghavaathreya@gmail.com</span>
                     </a>
                     <a href="https://linkedin.com/in/raghavendra-gv/" target="_blank" class="contact-link">
-                        <span>💼</span>
-                        <span>LinkedIn</span>
+                        <span>💼</span><span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/raghavendra-gv" target="_blank" class="contact-link">
+                        <span>🐙</span><span>GitHub</span>
                     </a>
                     <a href="tel:+919986767897" class="contact-link">
-                        <span>📱</span>
-                        <span>+91-9986767897</span>
+                        <span>📱</span><span>+91-9986767897</span>
                     </a>
                 </div>
             </div>
@@ -940,39 +997,48 @@
     </footer>
 
     <script>
-        // Smooth scroll with offset for fixed nav
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 80;
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
                 }
             });
         });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.skill-category, .project-card, .experience-item, .education-card').forEach(el => {
             observer.observe(el);
         });
+
+        // Show More toggle
+        function toggleMoreProjects() {
+            const grid = document.getElementById('moreProjects');
+            const btn = document.getElementById('showMoreBtn');
+            const isVisible = grid.classList.contains('visible');
+
+            if (isVisible) {
+                grid.classList.remove('visible');
+                btn.classList.remove('open');
+                btn.innerHTML = 'Show More Projects <span class="arrow">▼</span>';
+            } else {
+                grid.classList.add('visible');
+                btn.classList.add('open');
+                btn.innerHTML = 'Show Less <span class="arrow">▼</span>';
+                // Observe newly visible cards
+                grid.querySelectorAll('.project-card').forEach(el => observer.observe(el));
+            }
+        }
     </script>
 </body>
 </html>
